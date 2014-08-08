@@ -1,0 +1,197 @@
+127.0.0.1 - - [07/Aug/2014:21:35:19 +0700] [localhost/sid#410060][rid#1691300/initial] (2) init rewrite engine with requested uri /barabash/dummy.php
+127.0.0.1 - - [07/Aug/2014:21:35:19 +0700] [localhost/sid#410060][rid#1691300/initial] (1) pass through /barabash/dummy.php
+127.0.0.1 - - [07/Aug/2014:21:35:19 +0700] [localhost/sid#410060][rid#1691300/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/dummy.php -> dummy.php
+127.0.0.1 - - [07/Aug/2014:21:35:19 +0700] [localhost/sid#410060][rid#1691300/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'dummy.php'
+127.0.0.1 - - [07/Aug/2014:21:35:19 +0700] [localhost/sid#410060][rid#1691300/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/dummy.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:35:19 +0700] [localhost/sid#410060][rid#1691300/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/dummy.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:35:19 +0700] [localhost/sid#410060][rid#1691300/initial] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/dummy.php
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (2) init rewrite engine with requested uri /barabash/fafa
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (1) pass through /barabash/fafa
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/fafa -> fafa
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'fafa'
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/fafa' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/fafa' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/fafa' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'fafa' -> 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f2f1f0/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f33558/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f33558/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f33558/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f33558/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f33558/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f33558/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:36:07 +0700] [localhost/sid#410060][rid#3f33558/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (2) init rewrite engine with requested uri /barabash/check
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (1) pass through /barabash/check
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/check -> check
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'check'
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/check' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/check' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/check' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'check' -> 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#1699320/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#3f43598/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#3f43598/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#3f43598/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#3f43598/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#3f43598/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#3f43598/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:36:24 +0700] [localhost/sid#410060][rid#3f43598/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (2) init rewrite engine with requested uri /barabash/check
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (1) pass through /barabash/check
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/check -> check
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'check'
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/check' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/check' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/check' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'check' -> 'index.php?url=check'
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (3) split uri=index.php?url=check -> uri=index.php, args=url=check
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3d228/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3b8a0/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3b8a0/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3b8a0/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3b8a0/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3b8a0/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3b8a0/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:36:44 +0700] [localhost/sid#410060][rid#3f3b8a0/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (2) init rewrite engine with requested uri /barabash/itworks
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (1) pass through /barabash/itworks
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/itworks -> itworks
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'itworks'
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'itworks' -> 'index.php?url=itworks'
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (3) split uri=index.php?url=itworks -> uri=index.php, args=url=itworks
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#3f2b1e0/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#1691ae0/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#1691ae0/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#1691ae0/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#1691ae0/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#1691ae0/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#1691ae0/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:36:52 +0700] [localhost/sid#410060][rid#1691ae0/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (2) init rewrite engine with requested uri /barabash/itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (1) pass through /barabash/itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (3) [perdir C:/Apache/htdocs/barabash/] add path info postfix: C:/Apache/htdocs/barabash/itworks -> C:/Apache/htdocs/barabash/itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/itworks/hello -> itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'itworks/hello'
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'itworks/hello' -> 'index.php?url=itworks/hello'
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (3) split uri=index.php?url=itworks/hello -> uri=index.php, args=url=itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#169b328/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#3f55e88/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#3f55e88/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#3f55e88/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#3f55e88/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#3f55e88/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#3f55e88/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:37:40 +0700] [localhost/sid#410060][rid#3f55e88/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (2) init rewrite engine with requested uri /barabash/itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (1) pass through /barabash/itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (3) [perdir C:/Apache/htdocs/barabash/] add path info postfix: C:/Apache/htdocs/barabash/itworks -> C:/Apache/htdocs/barabash/itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/itworks/hello -> itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'itworks/hello'
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/itworks' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'itworks/hello' -> 'index.php?url=itworks/hello'
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (3) split uri=index.php?url=itworks/hello -> uri=index.php, args=url=itworks/hello
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f45248/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f47e50/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f47e50/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f47e50/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f47e50/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f47e50/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f47e50/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:43:48 +0700] [localhost/sid#410060][rid#3f47e50/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (2) init rewrite engine with requested uri /barabash/index
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (1) pass through /barabash/index
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index -> index
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index'
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'index' -> 'index.php?url=index'
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (3) split uri=index.php?url=index -> uri=index.php, args=url=index
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f291d8/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f2f870/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f2f870/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f2f870/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f2f870/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f2f870/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f2f870/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:43:58 +0700] [localhost/sid#410060][rid#3f2f870/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (2) init rewrite engine with requested uri /barabash/index
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (1) pass through /barabash/index
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index -> index
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index'
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'index' -> 'index.php?url=index'
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (3) split uri=index.php?url=index -> uri=index.php, args=url=index
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f51278/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f27850/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f27850/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f27850/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f27850/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f27850/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f27850/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:43:59 +0700] [localhost/sid#410060][rid#3f27850/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (2) init rewrite engine with requested uri /barabash/index
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (1) pass through /barabash/index
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index -> index
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index'
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'index' -> 'index.php?url=index'
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (3) split uri=index.php?url=index -> uri=index.php, args=url=index
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#1693308/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#16999a0/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#16999a0/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#16999a0/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#16999a0/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#16999a0/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#16999a0/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:44:21 +0700] [localhost/sid#410060][rid#16999a0/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (2) init rewrite engine with requested uri /barabash/help
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (1) pass through /barabash/help
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/help -> help
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'help'
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/help' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/help' pattern='!-f' => matched
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/help' pattern='!-l' => matched
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (2) [perdir C:/Apache/htdocs/barabash/] rewrite 'help' -> 'index.php?url=help'
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (3) split uri=index.php?url=help -> uri=index.php, args=url=help
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (3) [perdir C:/Apache/htdocs/barabash/] add per-dir prefix: index.php -> C:/Apache/htdocs/barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (2) [perdir C:/Apache/htdocs/barabash/] strip document_root prefix: C:/Apache/htdocs/barabash/index.php -> /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#16a3348/initial] (1) [perdir C:/Apache/htdocs/barabash/] internal redirect with /barabash/index.php [INTERNAL REDIRECT]
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#3f2b860/initial/redir#1] (2) init rewrite engine with requested uri /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#3f2b860/initial/redir#1] (1) pass through /barabash/index.php
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#3f2b860/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] strip per-dir prefix: C:/Apache/htdocs/barabash/index.php -> index.php
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#3f2b860/initial/redir#1] (3) [perdir C:/Apache/htdocs/barabash/] applying pattern '^(.*)$' to uri 'index.php'
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#3f2b860/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-d' => matched
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#3f2b860/initial/redir#1] (4) [perdir C:/Apache/htdocs/barabash/] RewriteCond: input='C:/Apache/htdocs/barabash/index.php' pattern='!-f' => not-matched
+127.0.0.1 - - [07/Aug/2014:21:47:01 +0700] [localhost/sid#410060][rid#3f2b860/initial/redir#1] (1) [perdir C:/Apache/htdocs/barabash/] pass through C:/Apache/htdocs/barabash/index.php

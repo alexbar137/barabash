@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html" charset=utf-8">
-	<title>
-		_%page_title%_
-	</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="scripts/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="scripts/app.js"></script>
-</head>
-<body>
-	
-</body>
-</html>
+<?php
+  $url = $_GET['url'];
+  $url = rtrim($url, '/');
+  $url = explode('/', $url);
+  require 'controllers/'.$url[0].'.php';
+  $controller = new $url[0];
+  if(isset($url[2])) {
+   $controller->$url[1]($url[2]);
+  }
+  else {
+   if(isset($url[1])) {
+    $controller->$url[1]();
+   }
+  }
+?>
