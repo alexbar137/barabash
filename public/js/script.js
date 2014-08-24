@@ -173,19 +173,16 @@ function validate_article() {
     if($('select[name=article_category]').val() == "None")
     {
         create_message('category_error', 'select[name=article_category]', "Выберите категорию");
-        alert("Category");
         check = false;
     }
         if($('textarea[name=article_short_desc]').val() == "")
     {
         create_message('desc_error', 'textarea[name=article_shord_desc]', "Введите краткое описание");
-        alert("Desc");
         check = false;
     }
         if($('textarea[name=article_content]').val() == "")
     {
         create_message('content_error', 'textarea[name=article_content]', "Введите содержимое статьи");
-        alert("Content")
         check = false;
     }
     

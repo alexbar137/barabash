@@ -5,7 +5,7 @@
         
         public function __construct() {
             $this->categories = array(
-                'None'=>"Нет",
+                'None'=>"Без категории",
                 'Software'=>"ПО",
                 'Hardware'=>"Оборудование",
                 'Cloud'=>"Облако",
@@ -75,6 +75,12 @@
             $result = "";
             foreach ($this->categories as $key=>$category) {
                 $result .= "<li><a href='".URL."/article/category/$key'>$category</a></li>";
+            }
+            
+            require_once "models/model_user.php";
+            if(UserModel::is_admin())
+            {
+                $result .= "<li><a href='".URL."/article/create'>Добавить</a></li>";
             }
             
             return $result;
