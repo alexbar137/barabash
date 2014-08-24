@@ -10,20 +10,21 @@
 <body>
 <div id="header">
 	<ul id="header_items">
-	<li><a href="#">Новости</a>
+	<li><a href="%%URL%%/article/all">Новости</a>
 		<ul>
-			<li><a href="#">Главные</a></li>
-			<li><a href="#">Политика</a></li>
-			<li><a href="#">Экономика</a></li>
+			%%CATEGORIES%%
 		</ul>
 	</li>
-	<li><a href="#">Форум</a>
+	<li><a href="%%URL%%/forum">Форум</a>
 		<ul>
 			<li><a href="#">Обсуждения</a></li>
 			<li><a href="#">Комментарии</a></li>
 		</ul>
 	</li>
+    %%USERS%%
+    </ul>
 	<div id="login">
 	%%AUTH_TEXT%%
 	</div>
 </div>
+<div id="center" align="center">

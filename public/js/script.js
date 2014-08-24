@@ -1,6 +1,8 @@
+var SITE_URL = "http://localhost/barabash";
+
 $(document).ready(function() {
 	//Main menu
-	$('#header_items li').click(function() {
+	$('#header_items li').hover(function() {
 		$(this).children('ul').slideToggle("fast");
 	})
 	$('#header_items li').mouseleave(function() {
@@ -15,17 +17,18 @@ function check_login() {
 	var input_user_name = $("input[name='user_name']").val();
 	var input_pass = $("input[name='pass']").val();
 	$.ajax({
-		url: "model/check_login.php",
+		url: SITE_URL + "/auth/check_login",
 		async: false,
 		type: "POST",
 		data: {user_name: input_user_name, pass: input_pass},
 		success: function(msg) {
+            console.log(msg);
 			if (msg != 1) {
 				$('#error_space').text("Неверное имя пользователя или пароль");
 			}
 			
 			else {
-				window.location = "index.php";
+				window.location = SITE_URL;
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -51,7 +54,7 @@ function user_exists() {
 	var check_name = true;
 	var input_user_name = $("input[name=user_name]").val();
 	$.ajax({
-		url: "model/user_exists.php",
+		url: SITE_URL + "/user/user_exists",
 		async: false,
 		type: "POST",
 		data: {user_name: input_user_name},
@@ -157,5 +160,35 @@ function edit_validate_data() {
 	var age_check = validate_age(age, 'input[name=age]');
 	
 	return (first_check && middle_check && last_check && email_check && age_check);
+}
+
+function validate_article() {
+    $('.message').remove();
+    var check = true;
+    if($('input[name=article_title]').val() == "")
+    {
+        create_message('title_error', 'input[name=article_title]', "Введите заголовок");
+        check = false;
+    }
+    if($('select[name=article_category]').val() == "None")
+    {
+        create_message('category_error', 'select[name=article_category]', "Выберите категорию");
+        alert("Category");
+        check = false;
+    }
+        if($('textarea[name=article_short_desc]').val() == "")
+    {
+        create_message('desc_error', 'textarea[name=article_shord_desc]', "Введите краткое описание");
+        alert("Desc");
+        check = false;
+    }
+        if($('textarea[name=article_content]').val() == "")
+    {
+        create_message('content_error', 'textarea[name=article_content]', "Введите содержимое статьи");
+        alert("Content")
+        check = false;
+    }
+    
+    return check;
 }
 

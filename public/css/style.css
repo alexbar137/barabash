@@ -25,9 +25,10 @@ body {
 }
 
 #header_items li {
+    display: block;
 	list-style: none;
 	float: left;
-	width: 100px;
+    width: 150px;
 	background-color: orange;
 	text-align: center;
 	line-height: 43px;
@@ -104,6 +105,22 @@ body {
 #profile {
 	padding: 5px;
 	margin: 5px;
+}
+
+.bordered_table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.bordered_table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.first_row {
+    background-color: #d89627;
+    color: white;
 }
 
 

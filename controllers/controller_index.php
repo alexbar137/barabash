@@ -5,8 +5,7 @@
    }
    
     public function index() {
-      $this->view->set_title("Главная страница");
-      $this->view->render('index/view_index');
+      $this->view->render('index/view_index', 'Главная страница');
     }
    
    public function default_method() {

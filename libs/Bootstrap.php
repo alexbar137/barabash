@@ -41,7 +41,7 @@
         {
             if (method_exists($controller, $url[1]))
             {
-                $controller->$url[1]();
+                isset($url[2]) ? $controller->$url[1]($url[2]) : $controller->$url[1]();
             }
             else
             {
