@@ -9,14 +9,7 @@
             if ($this->is_auth()) 
             {
                 $user = UserModel::read($_SESSION['user_id']);
-    			if ($user['first_name'] == "") 
-                {
-    				return "Здравствуйте, <a href='".URL."/user/profile/'>пользователь</a> | <a href='".URL."/auth/logout/'>Выход</a>";
-    			} 
-                else 
-                {
-    				return "Здравствуйте, <a href='".URL."/user/profile/'>" . $user['first_name'] . "</a> | <a href='".URL."/auth/logout/'>Выход</a>";
-    			}
+    			return "Здравствуйте, <a href='".URL."/user/profile/'>" . $user->name . "</a> | <a href='".URL."/auth/logout/'>Выход</a>";
     		}
     		else 
             {
@@ -51,8 +44,7 @@
         //Logout action
         public function logout () {   
              unset($_SESSION['user_id']);
-        	//Do not destroy session, since it currently keeps all users
-        	//session_destroy();
+        	session_destroy();
             $location = "Location: ".URL;
         	header($location);
         }

@@ -1,29 +1,29 @@
-<h1>Профиль пользователя <?php echo $this->display['input']['user_name']; ?></h1>
+<h1>Профиль пользователя <?php echo $this->display['input']->user_name; ?></h1>
 	<table id="profile">
 		<tr>
 			<td>Адрес электронной почты:</td>
-			<td><?php echo $this->display['input']['email']; ?></td>
+			<td><?php echo $this->display['input']->email; ?></td>
 		</tr>
 		<tr>
 			<td>Имя:</td>
-			<td><?php echo $this->display['input']['first_name']; ?></td>
+			<td><?php echo $this->display['input']->first_name; ?></td>
 		</tr>
 		<tr>
 			<td>Отчество:</td>
-			<td><?php echo $this->display['input']['middle_name']; ?></td>
+			<td><?php echo $this->display['input']->middle_name; ?></td>
 		</tr>
 		<tr>
 			<td>Фамилия:</td>
-			<td><?php echo $this->display['input']['last_name']; ?></td>
+			<td><?php echo $this->display['input']->last_name; ?></td>
 		</tr>
 		<tr>
 			<td>Возраст:</td>
-			<td><?php echo $this->display['input']['age']; ?></td>
+			<td><?php echo $this->display['input']->age; ?></td>
 		</tr>
         <tr>
 			<td>Роль:</td>
 			<td><?php
-                $role =  $this->display['input']['role'] == 1 ? "Администратор" : "Пользователь";
+                $role =  $this->display['input']->role == 1 ? "Администратор" : "Пользователь";
                 echo $role; 
                 ?>
             </td>

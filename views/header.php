@@ -3,6 +3,7 @@
 <head>
 <meta content=text/html charset=utf-8>
 <title>%%TITLE%%</title>
+<link href="%%URL%%/public/css/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="%%URL%%/public/css/style.css"/>
 <script src="%%URL%%/public/js/jquery-2.1.1.min.js"></script>
 <script src="%%URL%%/public/js/script.js"></script>

@@ -1,4 +1,4 @@
-var SITE_URL = "http://phpstudy.tcde.ru/barabash/";
+var SITE_URL = "http://localhost/barabash";
 
 $(document).ready(function() {
 	//Main menu

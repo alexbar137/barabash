@@ -8,6 +8,11 @@
 				<td><input type="text" name="user_name" width="10em" style="font-family: sans-serif" onchange="user_exists();"></td>
 				<td width="100"></td>
 			</tr>
+            			<tr>
+				<td>Электронная почта: </td>
+				<td><input type="text" name="email" width="10em" style="font-family: sans-serif" onchange="email_exists();"></td>
+				<td width="100"></td>
+			</tr>
 			<tr>
 				<td>Пароль: </td>
 				<td><input type="password" name="pass" width="10em" style="font-family: sans-serif"></td>
