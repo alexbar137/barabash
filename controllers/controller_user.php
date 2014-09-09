@@ -53,7 +53,7 @@
         }
         
         public function not_registered() {
-            $this->view->render('user/view_not_registered', 'Учетная запись создана');
+            $this->view->render('user/view_not_registered', 'Учетная запись не создана');
         }
         
         public function all(){
@@ -158,10 +158,12 @@
         
         //Page for sending email to multiple users
         public function send_to_all() {
+            $this->auth_model->protected_admin();
             $this->view->render('user/view_send_to_all');
         }
         
         public function send_to_all_do() {
+            $this->auth_model->protected_admin();
             require_once 'models/model_email.php';
             $email = new Email();
             $email->AdminEmailMult($_POST['message']);
@@ -171,7 +173,22 @@
         
         //Send successful
         public function sent() {
+            $this->auth_model->protected_admin();
             $this->view->render('user/view_sent');
+        }
+        
+        //Change user photo - page
+        public function change_photo() {
+            $this->auth_model->protected_section();
+            $user = UserModel::read($_SESSION['user_id']);
+            $this->view->set_display($user);
+            $this->view->render('user/view_change_photo', 'Изменение фотографии');
+        }
+        
+        //Change user photo - action
+        public function change_photo_do() {
+            $this->auth_model->protected_section();
+            $user = UserModel::change_photo();
         }
         
         
