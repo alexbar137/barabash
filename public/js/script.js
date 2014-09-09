@@ -1,4 +1,4 @@
-var SITE_URL = "http://localhost/barabash/";
+var SITE_URL = "http://miracle-number.codio.io:3000/";
 
 $(document).ready(function() {
 	//Main menu

@@ -7,9 +7,11 @@
         public function __construct() {
             
             //Track last visited page
+            echo $_SERVER['REQUEST_URI'];
             if(!isset($_SESSION['prev_page'])) $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
             $check = substr($_SERVER['REQUEST_URI'], -3);
-            if(isset($_SESSION['cur_page']) && ($_SESSION['cur_page'] != $_SERVER['REQUEST_URI']) && ($check != "_do"))
+            if(isset($_SESSION['cur_page']) && ($_SESSION['cur_page'] != $_SERVER['REQUEST_URI']) && 
+               ($check != "_do") && !strpos($_SERVER['REQUEST_URI'], "favicon"))
             {
                 $_SESSION['prev_page'] = $_SESSION['cur_page'];
                 
