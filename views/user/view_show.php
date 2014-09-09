@@ -1,4 +1,5 @@
 <h1>Профиль пользователя <?php echo $this->display['input']->user_name; ?></h1>
+<img src="<?php echo $this->display['input']->image; ?>" alt="<?php echo $this->display['input']->user_name; ?>" title="<?php echo $this->display['input']->user_name; ?>"/>
 	<table id="profile">
 		<tr>
 			<td>Адрес электронной почты:</td>
@@ -28,7 +29,9 @@
                 ?>
             </td>
 		</tr>
-		<tr align="center">
+		<tr>
+        <td colspan="2" align="center">
 			<input type="button" onclick="window.location=SITE_URL+'/user/all'" value="К списку пользователей"/>
+        </td>
 		</tr>
 	</table>

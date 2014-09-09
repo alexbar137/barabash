@@ -1,4 +1,10 @@
 <h1>Профиль</h1>
+<div id="avatar-wrapper">
+<img  id="avatar"  src="<?php echo $this->display['input']->image; ?>" alt="<?php echo $this->display['input']->user_name; ?>" title="<?php echo $this->display['input']->user_name; ?>"/>
+
+<div id="changeAvatar" style="display: none;"><a href="<?php echo URL;?>/user/change_photo">Изменить фотографию</a></div>
+</div>
+
 	<table id="profile">
 		<tr>
 			<td>Имя пользователя:</td>

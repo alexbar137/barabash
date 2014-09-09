@@ -1,4 +1,10 @@
 <h1>Профиль</h1>
+<div id="avatar-wrapper">
+<img  id="avatar"  src="<?php echo $this->display['input']->image; ?>" alt="<?php echo $this->display['input']->user_name; ?>" title="<?php echo $this->display['input']->user_name; ?>"/>
+
+<div id="changeAvatar" style="display: none;"><a href="<?php echo URL;?>/user/change_photo">Изменить фотографию</a></div>
+</div>
+
 	<form name="user_profile" action="<?php echo URL; ?>/user/edit_profile_do" method="POST" onsubmit="return edit_validate_data();">
 	<table id="profile">
 		<tr>
@@ -27,7 +33,7 @@
 		</tr>
 		<tr>
 			<td align="center"><input type="submit" value="Отправить"/></td>
-			<td align="center"><input type="button" onclick="window.location=SITEURL+'/user/profile'" value="Отмена"/></td>
+			<td align="center"><input type="button" onclick="window.location=SITE_URL+'/user/profile'" value="Отмена"/></td>
 		</tr>
 	</table>
 	</form>

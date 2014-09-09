@@ -42,6 +42,7 @@ class View {
         $file = str_replace('%%URL%%', URL, $file);
         $file = str_replace('%%AUTH_TEXT%%', $this->auth_text, $file);
         $file = str_replace('%%CATEGORIES%%', $this->categories, $file);
+        $file = str_replace('%%PREV_PAGE%%', $_SESSION['prev_page'], $file);
         
         
         return $file;

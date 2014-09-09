@@ -7,7 +7,9 @@
         public function __construct() {
             
             //Track last visited page
-            if(isset($_SESSION['cur_page']) && ($_SESSION['cur_page'] != $_SERVER['REQUEST_URI']))
+            if(!isset($_SESSION['prev_page'])) $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
+            $check = substr($_SERVER['REQUEST_URI'], -3);
+            if(isset($_SESSION['cur_page']) && ($_SESSION['cur_page'] != $_SERVER['REQUEST_URI']) && ($check != "_do"))
             {
                 $_SESSION['prev_page'] = $_SESSION['cur_page'];
                 
@@ -34,9 +36,5 @@
             
         }
         
-        /*public function __destruct() {
-            var_dump($_SESSION['cur_page']);
-            var_dump($_SESSION['prev_page']);
-        }*/
     }
 ?>

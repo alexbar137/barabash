@@ -26,6 +26,7 @@
     </ul>
 	<div id="login">
 	%%AUTH_TEXT%%
-	</div>
+	</div> 
 </div>
+<div id="back-btn"><a href="%%PREV_PAGE%%">Назад</a></div>
 <div id="center" align="center">

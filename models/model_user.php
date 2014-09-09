@@ -74,6 +74,13 @@ class UserModel {
         
        //Choose name to address user
        $user[0]->name = ($user[0]->first_name != "") ? $user[0]->first_name : $user[0]->user_name;
+       
+       //Use standard picture, if user provided no custom image
+       if(!isset($user[0]->image) || $user[0]->image == "")
+       {
+           $user[0]->image = URL."/images/system/user.jpeg";
+       }
+       
         
         //User is found. Remove password from array
 		unset($user[0]->password);
@@ -237,6 +244,107 @@ class UserModel {
         $user = UserModel::read($_SESSION['user_id']);
         if($user->role == 1) return true;
         return false;
+    }
+    
+    //Change user photo
+    public static function change_photo() {
+        if(isset($_FILES["FileInput"]) && $_FILES["FileInput"]["error"]== UPLOAD_ERR_OK)
+        {
+            $UploadDirectory    = 'images/upload/';
+                       
+            
+            //check if this is an ajax request
+            if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
+                die();
+            }
+    
+    
+            //Is file size is less than allowed size.
+            if ($_FILES["FileInput"]["size"] > 5242880) {
+                die("File size is too big!");
+            }
+    
+            //allowed file type Server side check
+            if (strtolower($_FILES['FileInput']['type']) != 'image/jpeg')
+            {
+                die('Unsupported File!');
+            }
+            
+            $user = UserModel::read($_SESSION['user_id']);
+            $user_name = (string)$user->user_name;
+            $dir = $UploadDirectory.$user_name;
+            //Create user's subfolder in 'upload' folder
+            if(!file_exists($dir) && !is_dir($dir)) mkdir($dir);
+    
+            
+            $File_Name = strtolower($_FILES['FileInput']['name']);
+            
+           
+            $time = time();
+            $NewFileName = $user->user_name."_".$time.".jpeg"; //new file name
+            $Dir_file = $dir."/".$NewFileName;
+            
+            if(move_uploaded_file($_FILES['FileInput']['tmp_name'], $Dir_file))
+            {   
+                //Resize image to 200px at larger side
+                $maxsize = 200;      
+                $pic = imagecreatefromjpeg($Dir_file);
+                $width = imagesx($pic);
+                $height = imagesy($pic);
+                
+                if ($width > $height)
+                {
+                    $new_width = $maxsize;
+                    $new_height = ($height * $maxsize / $width);
+                }
+                else
+                {
+                    $new_height = $maxsize;
+                    $new_width = ($width * $maxsize / $height);
+                }
+                
+                $new_pic = imagecreatetruecolor($new_width, $new_height);
+                imagecopyresampled($new_pic, $pic, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+                imagejpeg($new_pic, $Dir_file, 50);
+                imagedestroy($new_pic);
+                imagedestroy($pic);
+                
+                //Add image path to users XML
+                $XML = simplexml_load_file('data/users.xml');
+                $id = $_SESSION['user_id'];
+                $user = $XML->xpath("//user[@id=$id]");
+                $full_path = URL."/".$Dir_file;
+                if(!isset($user[0]->image))
+                {
+                    $user[0]->addChild('image', $full_path);  
+                }
+                else
+                {
+                    //Remove previous image
+                    $image = (string)$user[0]->image;
+                    $image = substr($image, strlen(URL) + 1);
+                    unlink($image);
+                    
+                    //Save path to the new image
+                    $user[0]->image = $full_path;
+                }
+                
+                //Save XML and display image
+                $XML->asXML('data/users.xml');
+                $result = "<img src='$full_path' alt='$user_name' title='$user_name' />";
+                echo $result;
+                die();
+            }
+            else
+            {
+                die('Еrror uploading file!');
+            }
+            
+        }
+        else
+        {
+            die('Something wrong with upload! Is "upload_max_filesize" set correctly?');
+        }
     }
 }
 ?>

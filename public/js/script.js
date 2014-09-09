@@ -1,4 +1,4 @@
-var SITE_URL = "http://phpstudy.tcde.ru/barabash/";
+var SITE_URL = "http://localhost/barabash/";
 
 $(document).ready(function() {
 	//Main menu
@@ -8,7 +8,16 @@ $(document).ready(function() {
 	$('#header_items li').mouseleave(function() {
 		$(this).children('ul').slideUp("fast");
 	})
-	
+    
+    //Display link to change avatar
+    $('#avatar-wrapper').hover(
+        function() {
+            $('#changeAvatar').fadeIn("slow", function() {});
+        },
+        function() {
+            $('#changeAvatar').fadeOut("slow", function() {});
+        }
+    );
 })
 
 

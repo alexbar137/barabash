@@ -3,7 +3,6 @@ body {
 	font-family: arial;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -15px;
 }
 #header {
 	height: 50px;
@@ -146,63 +145,6 @@ body {
 	position:absolute;
 	display:inline-block;
 	color: #FFFFFF;
-}
-
-/*Avatar*/
-#avatar-wrapper {
-    position: relative;
-    width: 200px;
-}
-
-#avatar {
-    position: relative;
-    z-index: 0;
-}
-
-#changeAvatar {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    font-size: 10px;
-    text-decoration: none;
-    color: white;
-    background-color: rgba(0,0,0,0.5);
-    padding: 3px;
-}
-
-#changeAvatar a {
-    text-decoration: none;
-    color: white;
-}
-
-#back-btn {
-    position: absolute;
-    float: left;
-    background-color: orange;
-    width: 50px;
-    line-height: 30px;
-    padding: 2px;
-    text-align: center;
-    margin-left: 15px;
-}
-
-#back-btn a {
-    color: white;
-    text-decoration: none;
-}
-
-#back-btn::before {
-    position: absolute;
-	vertical-align: middle;
-	content: "";
-	right: 50px;
-	border: 15px solid transparent;
-	border-right: 15px solid orange;
-}
-
-#back-btn:hover {
-    box-shadow: 2px 2px 2px gray;
 }
 
 
