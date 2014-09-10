@@ -58,13 +58,13 @@
         
         public function all(){
             $this->auth_model->protected_section();
-            $this->auth_model->protected_admin();
             $this->view->set_display(UserModel::all());
+            $this->view->set_display(UserModel::is_admin(), 'is_admin');
             $this->view->render('user/view_all', 'Пользователи сайта');
         }
         
         public function show($id) {
-            $this->auth_model->protected_admin();
+            $this->auth_model->protected_section();
             $user = UserModel::read($id);
             if(!is_object($user)) 
             {
@@ -73,11 +73,12 @@
             }
             $title = "Пользователь: ".$user->user_name;
             $this->view->set_display($user);
+            $this->view->set_display(UserModel::is_admin(), 'is_admin');
             $this->view->render('user/view_show', $title);
         }
         
         public function not_found() {
-            $this->auth_model->protected_admin();
+            $this->auth_model->protected_section();
             $this->view->render('user/view_not_found', "Пользователь не найден");
         }
         

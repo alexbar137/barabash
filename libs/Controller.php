@@ -7,7 +7,6 @@
         public function __construct() {
             
             //Track last visited page
-            echo $_SERVER['REQUEST_URI'];
             if(!isset($_SESSION['prev_page'])) $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
             $check = substr($_SERVER['REQUEST_URI'], -3);
             if(isset($_SESSION['cur_page']) && ($_SESSION['cur_page'] != $_SERVER['REQUEST_URI']) && 
@@ -30,7 +29,8 @@
             $this->auth_model = new AuthModel();
             $auth_text = $this->auth_model->auth_text();
             
-            $this->view->set_auth_text($auth_text);            
+            $this->view->set_auth_text($auth_text);
+            $this->view->set_is_auth($this->auth_model->is_auth());
         }
         
         

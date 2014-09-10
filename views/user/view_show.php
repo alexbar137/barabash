@@ -1,10 +1,12 @@
 <h1>Профиль пользователя <?php echo $this->display['input']->user_name; ?></h1>
 <img src="<?php echo $this->display['input']->image; ?>" alt="<?php echo $this->display['input']->user_name; ?>" title="<?php echo $this->display['input']->user_name; ?>"/>
 	<table id="profile">
-		<tr>
+		<?php if($this->display['is_admin']) {?>
+        <tr>
 			<td>Адрес электронной почты:</td>
 			<td><?php echo $this->display['input']->email; ?></td>
 		</tr>
+        <?php };?>
 		<tr>
 			<td>Имя:</td>
 			<td><?php echo $this->display['input']->first_name; ?></td>

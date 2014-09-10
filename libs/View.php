@@ -4,6 +4,7 @@ class View {
     private $auth_text;
     private $display;
     private $categories;
+    private $is_auth;
     
     public function __construct() {
     }
@@ -15,6 +16,10 @@ class View {
     public function set_auth_text($auth_text) {
         $this->auth_text = $auth_text;
     }
+    
+    public function set_is_auth($is_auth) {
+        $this->is_auth = $is_auth;
+    } 
     
     public function set_categories($categories) {
         $this->categories = $categories;
@@ -30,7 +35,7 @@ class View {
     private function get_template($file_name) {
         $file = file_get_contents($file_name);
         $users = "<li><a href='%%URL%%/user/all'>Пользователи</a></li>";
-        if(UserModel::is_admin()) 
+        if($this->is_auth) 
         {
             $file = str_replace('%%USERS%%', $users, $file);
         }
