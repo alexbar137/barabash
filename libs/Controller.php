@@ -19,16 +19,23 @@
             
             require_once INCURL . "/models/model_auth.php";
             require_once INCURL . "/models/model_article.php";
+            require_once INCURL . "/models/model_db.php";
             
+            //Connect DB
+            $this->db = new DbModel();
+            
+            
+            //Create view            
             $this->view = new View();
             
+            //Add news categories to the view
             $this->article_model = new Model_Article();
             $categories = $this->article_model->list_categories();
             $this->view->set_categories($categories);
             
+            //Set up authentication and add auth text to view
             $this->auth_model = new AuthModel();
             $auth_text = $this->auth_model->auth_text();
-            
             $this->view->set_auth_text($auth_text);
             $this->view->set_is_auth($this->auth_model->is_auth());
         }
