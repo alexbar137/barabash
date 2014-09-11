@@ -14,13 +14,13 @@
     ?>
     
     <tr>
-        <td><?php echo $user['id'];?></td>
-        <td><a href="<?php echo URL; ?>/user/show/<?php echo $user['id'];?>"><?php echo $user['user_name'];?></a></td>
-        <?php if($this->display['is_admin']) {?><td><?php echo $user['email'];?></td><?php };?>
-        <td><?php echo $user['role'];?></td>
+        <td><?php echo $user->id;?></td>
+        <td><a href="<?php echo URL; ?>/user/show/<?php echo $user->id;?>"><?php echo $user->user_name;?></a></td>
+        <?php if($this->display['is_admin']) {?><td><?php echo $user->email;?></td><?php };?>
+        <td><?php echo $user->role;?></td>
         <?php if($this->display['is_admin']) {?><td align="center">
-            <a href="<?php echo URL; ?>/user/send/<?php echo $user['id'];?>"<i class="fa fa-envelope-o" style="color: blue" title="Отправить сообщение пользователю <?php echo $user['user_name']; ?>"></i></a>
-            <a href="<?php echo URL; ?>/user/delete/<?php echo $user['id'];?>"><i class="fa fa-trash-o" style="color: red; padding-left: 5px" title="Удалить пользователя <?php echo $user['user_name']; ?>"></i></a>
+            <a href="<?php echo URL; ?>/user/send/<?php echo $user->id;?>"<i class="fa fa-envelope-o" style="color: blue" title="Отправить сообщение пользователю <?php echo $user->user_name; ?>"></i></a>
+            <a href="<?php echo URL; ?>/user/delete/<?php echo $user->id;?>"><i class="fa fa-trash-o" style="color: red; padding-left: 5px" title="Удалить пользователя <?php echo $user->user_name; ?>"></i></a>
         </td><?php };?>
     </tr>
     <?php

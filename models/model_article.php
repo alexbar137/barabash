@@ -78,7 +78,8 @@
             }
             
             require_once "models/model_user.php";
-            if(UserModel::is_admin())
+            $user_model = new UserModel();
+            if($user_model->is_admin())
             {
                 $result .= "<li><a href='".URL."/article/create'>Добавить</a></li>";
             }

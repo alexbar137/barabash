@@ -19,10 +19,6 @@
             
             require_once INCURL . "/models/model_auth.php";
             require_once INCURL . "/models/model_article.php";
-            require_once INCURL . "/models/model_db.php";
-            
-            //Connect DB
-            $this->db = new DbModel();
             
             
             //Create view            

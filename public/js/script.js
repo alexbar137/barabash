@@ -27,10 +27,11 @@ function check_login() {
 	var input_pass = $("input[name='pass']").val();
 	$.ajax({
 		url: SITE_URL + "/auth/check_login",
-		async: false,
+		async: true,
 		type: "POST",
 		data: {user_name: input_user_name, pass: input_pass},
 		success: function(msg) {
+        	alert(msg);
 			if (msg != 1) {
 				$('#error_space').text("Неверное имя пользователя или пароль");
 			}

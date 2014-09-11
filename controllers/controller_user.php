@@ -1,9 +1,12 @@
 <?php
     class User extends Controller {
+    
+    	private $user_model;
         
         public function __construct() {
             parent::__construct();
             require_once INCURL."/models/model_user.php";
+            $this->user_model = new UserModel();
             
         }
         
@@ -13,21 +16,21 @@
         
         public function profile() {
             $this->auth_model->protected_section();
-            $user = UserModel::read($_SESSION['user_id']);
+            $user = $this->user_model->read($_SESSION['user_id']);
             $this->view->set_display($user);
             $this->view->render('user/view_profile', 'Профиль');
         }
         
         public function edit_profile() {
             $this->auth_model->protected_section();
-            $user = UserModel::read($_SESSION['user_id']);
+            $user = $this->user_model->read($_SESSION['user_id']);
             $this->view->set_display($user);
             $this->view->render('user/view_edit_profile', 'Редактирование профиля');
         }
         
         public function edit_profile_do() {
             $this->auth_model->protected_section();
-            UserModel::edit_profile_do();            
+            $this->user_model->edit_profile_do();            
         }
         
         public function register() {
@@ -36,16 +39,16 @@
         
         //Action for Ajax call. Check if user_name is occupied.
         public function user_exists() {
-            UserModel::user_exists();
+            $this->user_model->user_exists();
         }
         
         //Action for Ajax call. Check if email is occupied.
         public function email_exists() {
-            UserModel::email_exists();
+            $this->user_model->email_exists();
         }
         
         public function register_do() {
-            UserModel::register_do();
+            $this->user_model->register_do();
         }
         
         public function registered() {
@@ -58,14 +61,14 @@
         
         public function all(){
             $this->auth_model->protected_section();
-            $this->view->set_display(UserModel::all());
-            $this->view->set_display(UserModel::is_admin(), 'is_admin');
+            $this->view->set_display($this->user_model->all());
+            $this->view->set_display($this->user_model->is_admin(), 'is_admin');
             $this->view->render('user/view_all', 'Пользователи сайта');
         }
         
         public function show($id) {
             $this->auth_model->protected_section();
-            $user = UserModel::read($id);
+            $user = $this->user_model->read($id);
             if(!is_object($user)) 
             {
                 $this->not_found();
@@ -73,7 +76,7 @@
             }
             $title = "Пользователь: ".$user->user_name;
             $this->view->set_display($user);
-            $this->view->set_display(UserModel::is_admin(), 'is_admin');
+            $this->view->set_display($this->user_model->is_admin(), 'is_admin');
             $this->view->render('user/view_show', $title);
         }
         
@@ -99,7 +102,7 @@
                 $error = new Error('Вы не можете удалить себя');
                 return;
             }
-            $user = UserModel::read($id);
+            $user = $this->user_model->read($id);
             $user_name = $user->user_name;
             $this->view->set_display($user_name, 'user_name');
             $this->view->set_display($id, 'id');
@@ -121,7 +124,7 @@
                 $error = new Error('Вероятно, вы попали сюда случайно');
                 return;
             }
-            UserModel::delete($id);
+            $this->user_model->delete($id);
             $header = "Location: ".URL."/user/all";
             header($header);
         }
@@ -135,7 +138,7 @@
                 $error = new Error('Не выбран пользователь');
                 return;
             } 
-            $this->view->set_display(UserModel::read($id));
+            $this->view->set_display($this->user_model->read($id));
             $this->view->set_display($id, 'id');
             $this->view->render('user/view_send');
         }
@@ -181,7 +184,7 @@
         //Change user photo - page
         public function change_photo() {
             $this->auth_model->protected_section();
-            $user = UserModel::read($_SESSION['user_id']);
+            $user = $this->user_model->read($_SESSION['user_id']);
             $this->view->set_display($user);
             $this->view->render('user/view_change_photo', 'Изменение фотографии');
         }
@@ -189,7 +192,7 @@
         //Change user photo - action
         public function change_photo_do() {
             $this->auth_model->protected_section();
-            $user = UserModel::change_photo();
+            $user = $this->user_model->change_photo();
         }
         
         

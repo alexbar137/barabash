@@ -3,7 +3,7 @@
 
 
 <p>Здравствуйте!</p>
-<form action="/barabash/user/send_to_all_do" method="POST">
+<form action="/user/send_to_all_do" method="POST">
     <textarea name="message" cols="50" rows="10" placeholder="Введите сообщение"></textarea>
     <p>С уважением,<br/>администратор сайта</p>
 <table>    

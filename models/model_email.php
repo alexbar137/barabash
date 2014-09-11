@@ -2,19 +2,22 @@
     class Email extends Model
     {
         private $headers;
+        private $user_model;
         
         public function __construct()
         {
             $this->headers = 'Content-type: text/html; charset=UTF-8'."\r\n";
             $this->headers .= "From: ".ADMIN."\r\n";
             $this->headers .= "Reply-To: ".ADMIN."\r\n";
+            require_once "models/model_user.php";
+            $this->user_model = new UserModel();
         }
         
         public function UserCreated($user_id)
         {
             require_once "models/model_user.php";
             $to = ADMIN;
-            $user = UserModel::read($user_id);
+            $user = $this->user_model->read($user_id);
             $user_name = $user->user_name;
             $subj = "Новый пользователь $user_name";
             $msg = 
@@ -37,7 +40,7 @@
         public function AdminEmail($user_id, $msg)
         {
             require_once "models/model_user.php";
-            $user = UserModel::read($user_id);
+            $user = $this->user_model->read($user_id);
             $to = $user->email;
             $name = $user->name;
             $subj = "Сообщение от администратора";
@@ -63,10 +66,10 @@
         public function AdminEmailMult ($msg)
         {
             require_once "model_user.php";
-            $users = UserModel::all();
+            $users = $this->user_model->all();
             foreach ($users as $user)
             {
-                $this->AdminEmail($user['id'], $msg);
+                $this->AdminEmail($user->id, $msg);
             }
         }
     }

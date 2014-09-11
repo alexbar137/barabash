@@ -3,7 +3,7 @@
 
 
 <p>Здравствуйте, <b><?php echo $this->display['input']->name; ?></b>!</p>
-<form action="/barabash/user/send_do/<?php echo $this->display['id'];?>" method="POST">
+<form action="/user/send_do/<?php echo $this->display['id'];?>" method="POST">
     <textarea name="message" cols="50" rows="10" placeholder="Введите сообщение"></textarea>
     <p>С уважением,<br/>администратор сайта</p>
 <table>    

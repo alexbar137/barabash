@@ -1,14 +1,18 @@
 <?php
-    class AuthModel extends Model {    
+    class AuthModel extends Model {
+    
+    	private $user_model;
+        
         public function __construct() {
             require_once INCURL . '/models/model_user.php';
+            $this->user_model = new UserModel();
         }
         
         //Login text in the header
         public function auth_text() {
             if ($this->is_auth()) 
             {
-                $user = UserModel::read($_SESSION['user_id']);
+                $user = $this->user_model->read($_SESSION['user_id']);
     			return "Здравствуйте, <a href='".URL."/user/profile/'>" . $user->name . "</a> | <a href='".URL."/auth/logout/'>Выход</a>";
     		}
     		else 
@@ -35,7 +39,7 @@
             {
         		$input_user_name = htmlspecialchars($_POST['user_name']);
         		$input_pass = htmlspecialchars($_POST['pass']);
-        		return UserModel::login($input_user_name, $input_pass);
+        		return $this->user_model->login($input_user_name, $input_pass);
         	}
         	return false;
         }
@@ -59,7 +63,7 @@
         
         //Provide admin access only
         public function protected_admin() {
-            if(!UserModel::is_admin())
+            if(!$this->user_model->is_admin())
             {
                 $location = "Location: ".URL."/auth/not_admin";
                 header($location);

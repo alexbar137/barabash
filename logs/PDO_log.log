@@ -2,3 +2,9 @@ SQLSTATE[HY000]: General error: 1364 Field 'email' doesn't have a default value	
 SQLSTATE[HY000]: General error: 1364 Field 'role' doesn't have a default value	11.09.2014 12:45:38
 SQLSTATE[HY000]: General error: 1364 Field 'image' doesn't have a default value	11.09.2014 12:46:22
 SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(user_name='first', password='passt', first_name='Hello', email='zzzz', role='0'' at line 1	11.09.2014 14:04:12
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	11.09.2014 23:05:41
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	11.09.2014 23:08:48
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	11.09.2014 23:11:30
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	11.09.2014 23:12:39
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	11.09.2014 23:15:07
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	11.09.2014 23:18:03

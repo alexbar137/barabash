@@ -5,7 +5,7 @@ class DbModel extends Model {
     private $DBH;
     private $valid_keys = array
         ('users'=>array
-            ('user_name', 'email', 'password', 'first_name', 
+            ('id', 'user_name', 'email', 'password', 'first_name', 
              'middle_name', 'last_name', 'age', 'role', 'image')
          );
     
@@ -29,15 +29,20 @@ class DbModel extends Model {
         $timestamp = date('d.m.Y H:i:s');
         file_put_contents($filename, $error."\t".$timestamp."\n", FILE_APPEND);
     }
+    
+    public function is_valid_key($table, $key) {
+    	return (in_array($key, $this->valid_keys[$table]));
+    }
 
    //Build insert statement and send to PDO 
-    private function insert($table, array $input) {
+    public function insert($table, array $input) {
         $keys = array ();
         $values = array ();
+        $placeholders = array();
         foreach ($input as $key=>$value)
         {	
             //Check if all keys are valid
-            if(in_array($key, $this->valid_keys[$table]))
+            if($this->is_valid_key($table, $key))
             {
                 $keys[] = $key;
                 $values[] = $value;
@@ -53,17 +58,22 @@ class DbModel extends Model {
         $key_string = implode(", ", $keys);
         $placeholder_string = implode(", ", $placeholders);
         $request = "INSERT INTO $table ($key_string) VALUES ($placeholder_string)";
-        $this->exec_request($request, $values);
+        $req = $this->exec_request($request, $input);
+        if($req)
+        {
+        	return $this->DBH->lastInsertId();
+        };
+        
     }
     
     //Build update statement and send to PDO
-    private function update($table, array $input, $id, $id_name = 'id') {
+    public function update($table, $input, $id, $id_name = 'id') {
         
         $placeholders =  array();
         foreach ($input as $key=>$value)
         {
             //Check if all keys are valid
-            if(in_array($key, $this->valid_keys[$table]))
+            if($this->is_valid_key($table, $key))
             {
                 //Use named placeholders
                 $placeholders[] = "$key=:$key";
@@ -75,7 +85,7 @@ class DbModel extends Model {
         }
         $placeholder_string = implode(", ", $placeholders);
         //Check if where id is a valid field key
-        if(($id_name == "id") || (in_array($id_name, $valid_keys)))
+        if($this->is_valid_key($table, $id_name))
         {
             $where = "$id_name=:$id_name";
             $input[$id_name] = $id;
@@ -86,7 +96,21 @@ class DbModel extends Model {
         }   
            
         $request = "UPDATE $table SET $placeholder_string WHERE $where";
-        $this->exec_request($request, $input);
+        return $this->exec_request($request, $input);
+    }
+    
+    //Build delete statement and send to PDO
+    public function delete($table, $id, $id_name = 'id') {
+    	if($this->is_valid_key($table, $id_name))
+        {
+        	$where = "$id_name=:$id_name";
+            $request = "DELETE FROM $table WHERE $where";
+        }
+        else
+        {
+        	return "Неверный идентификатор";
+        }
+        return $this->exec_request($request, $id);
     }
     
     //Execute prepared SQL statement
@@ -109,17 +133,29 @@ class DbModel extends Model {
     
     //Build select statement, send to PDO, and then fetch and parse result to
     //an array of objects
-    public function select($table, array $fields, $id, $id_name = 'id') {
+    public function select($table, $fields, $id, $id_name = 'id') {
+    	if(!is_array($fields)) $fields = array($fields);
         $placeholders =  array();
         foreach($fields as $field)
         {
             //Check if all keys are valid
-            if(!in_array($field, $this->valid_keys[$table])) return "Неверное название поля";
+            if(!$this->is_valid_key($table, $field)) return "Неверное название поля";
         }
         $key_string = implode(", ", $fields);
-        if (!((in_array($id_name, $this->valid_keys[$table])) || ($id_name == 'id')))  return "Неверный идентификатор";
-        $request = "SELECT $key_string FROM $table WHERE $id_name = ?";
-        $STH = $this->exec_request($request, $id);
+        if (!$this->is_valid_key($table, $id_name))  return "Неверный идентификатор";
+        
+        if (($id_name == 'id') && ($id == "ALL"))
+        {
+        	$request = "SELECT $key_string FROM $table";
+            $STH = $this->DBH->query($request);
+        }
+        else
+        {
+        	$request = "SELECT $key_string FROM $table WHERE $id_name = ?";
+            $STH = $this->exec_request($request, $id);
+        }
+            
+        
         $STH->setFetchMode(PDO::FETCH_OBJ);
         
         //Parse selected data
