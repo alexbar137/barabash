@@ -16,10 +16,10 @@
 			%%CATEGORIES%%
 		</ul>
 	</li>
-	<li><a href="%%URL%%/forum">Форум</a>
+	<li><a href="%%URL%%/forum">Сообщения</a>
 		<ul>
-			<li><a href="#">Обсуждения</a></li>
-			<li><a href="#">Комментарии</a></li>
+			<li><a href="%%URL%%/message/all">Личные</a></li>
+			<li><a href="#">Форум</a></li>
 		</ul>
 	</li>
     %%USERS%%

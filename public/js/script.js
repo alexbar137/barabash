@@ -1,4 +1,4 @@
-var SITE_URL = "http://miracle-number.codio.io:3000/";
+var SITE_URL = "http://miracle-number.codio.io:3000";
 
 $(document).ready(function() {
 	//Main menu
@@ -18,6 +18,20 @@ $(document).ready(function() {
             $('#changeAvatar').fadeOut("slow", function() {});
         }
     );
+    
+    
+    //Create reply textarea
+    $('.reply-link').click(function() {
+    	$(this).fadeOut("slow");
+        var message_id = $(this).parent('.msg').attr('message_id');
+        var form = '<form id="reply-form" name="reply-form" action="'+SITE_URL+'/message/add_reply/'+message_id+'" method="POST"></form>';
+        $(this).parent('.msg').append(form);
+    	$('#reply-form').append('<textarea class="reply-text" class="display: none" cols=60 rows=10></textarea>');
+        $('#reply-form').append('<input type="submit" name="send_reply" value="Отправить"/>');
+        $('#reply-form').append('<input type="button" name="cancel" value="Отмена"/>');
+        $('.reply-link').off();
+    })
+    
 })
 
 
@@ -31,7 +45,6 @@ function check_login() {
 		type: "POST",
 		data: {user_name: input_user_name, pass: input_pass},
 		success: function(msg) {
-        	alert(msg);
 			if (msg != 1) {
 				$('#error_space').text("Неверное имя пользователя или пароль");
 			}
@@ -237,4 +250,3 @@ function validate_article() {
     
     return check;
 }
-

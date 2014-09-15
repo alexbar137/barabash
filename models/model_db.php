@@ -6,7 +6,9 @@ class DbModel extends Model {
     private $valid_keys = array
         ('users'=>array
             ('id', 'user_name', 'email', 'password', 'first_name', 
-             'middle_name', 'last_name', 'age', 'role', 'image')
+             'middle_name', 'last_name', 'age', 'role', 'image'),
+         'messages'=>array
+         	('id', 'from_name', 'to_name', 'in_reply_to', 'time', 'subject', 'body')
          );
     
     public function __construct() {
@@ -133,7 +135,8 @@ class DbModel extends Model {
     
     //Build select statement, send to PDO, and then fetch and parse result to
     //an array of objects
-    public function select($table, $fields, $id, $id_name = 'id') {
+    public function select($table, $fields = "ALL", $id = 'ALL', $id_name = 'id') {
+    	if($fields == "ALL") $fields = $this->valid_keys[$table];
     	if(!is_array($fields)) $fields = array($fields);
         $placeholders =  array();
         foreach($fields as $field)
@@ -149,13 +152,24 @@ class DbModel extends Model {
         	$request = "SELECT $key_string FROM $table";
             $STH = $this->DBH->query($request);
         }
+        elseif (is_array($id))
+        {
+        	$wheres = array();
+        	foreach($id as $where=>$value)
+            {
+            	$wheres[] = "$where = :$where";
+            }
+            $where_string = implode(" AND ", $wheres);
+            $request = "SELECT $key_string FROM $table WHERE $where_string";
+            $STH = $this->exec_request($request, $id);
+        }
         else
         {
         	$request = "SELECT $key_string FROM $table WHERE $id_name = ?";
             $STH = $this->exec_request($request, $id);
         }
             
-        
+        if(empty($STH)) return "Ничего не найдено";
         $STH->setFetchMode(PDO::FETCH_OBJ);
         
         //Parse selected data

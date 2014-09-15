@@ -205,4 +205,65 @@ body {
     box-shadow: 2px 2px 2px gray;
 }
 
+/*Messages*/
+.msg {
+    display: inline-block;
+    text-align: justify;
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    overflow-wrap: break-word;
+    background-color: #FFC89A;
+}
+
+
+.msg:hover {
+    box-shadow: 2px 2px 5px gray;
+}
+
+.msg a {
+    color: black;
+    text-decoration: none;
+}
+
+.msg a:hover {
+    text-decoration: underline;
+}
+
+.user-avatar {
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px gray;
+}
+
+
+.msg-header {
+    width: 400px;
+    display: inline-block;
+    padding-left: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+//Reply
+.reply-link {
+
+}
+
+.reply-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.reply-text {
+    position: relative;
+    border-radius: 5px;
+    margin-left: 30px;
+    font-family: sans-serif;
+}
+
+
 

@@ -53,6 +53,7 @@ class UserModel {
            $user[0]->image = URL."/images/system/user.jpeg";
        }
        
+       $user[0]->small_image = substr($user[0]->image, 0, -5)."_small.jpeg";
         
         //User is found
 		return $user[0];
@@ -228,7 +229,7 @@ class UserModel {
             $user_name = (string)$user->user_name;
             $dir = $UploadDirectory.$user_name;
             //Create user's subfolder in 'upload' folder
-            if(!file_exists($dir) && !is_dir($dir)) mkdir($dir);
+            if(!file_exists($dir) || !is_dir($dir)) mkdir($dir);
     
             
             $File_Name = strtolower($_FILES['FileInput']['name']);
@@ -236,7 +237,9 @@ class UserModel {
            
             $time = time();
             $NewFileName = $user->user_name."_".$time.".jpeg"; //new file name
+            $NewFileName_small = $user->user_name."_".$time."_small.jpeg"; //new small file name
             $Dir_file = $dir."/".$NewFileName;
+            $Dir_file_small = $dir."/".$NewFileName_small;
             
             if(move_uploaded_file($_FILES['FileInput']['tmp_name'], $Dir_file))
             {   
@@ -258,9 +261,13 @@ class UserModel {
                 }
                 
                 $new_pic = imagecreatetruecolor($new_width, $new_height);
+                $new_pic_small = imagecreatetruecolor($new_width/2, $new_height/2);
                 imagecopyresampled($new_pic, $pic, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+                imagecopyresampled($new_pic_small, $pic, 0, 0, 0, 0, $new_width/2, $new_height/2, $width, $height);
                 imagejpeg($new_pic, $Dir_file, 50);
+                imagejpeg($new_pic_small, $Dir_file_small, 50);
                 imagedestroy($new_pic);
+                imagedestroy($new_pic_small);
                 imagedestroy($pic);
                 
                 //Add image path to DB
@@ -272,10 +279,12 @@ class UserModel {
                 }
                 else
                 {
-                    //Remove previous image
+                    //Remove previous images
                     $image = (string)$user->image;
-                    $image = substr($image, strlen(URL) + 1);
-                    unlink($image);
+                    $image_unlink = substr($image, strlen(URL) + 1);
+                    $image_unlink_small = substr($image, strlen(URL) + 1, -5)."_small.jpeg";
+                    unlink($image_unlink);
+                    unlink($image_unlink_small);
                     
                     //Save path to the new image
                 	$field = array("image"=>$full_path);
