@@ -39,7 +39,7 @@ class UserModel {
 	public function read($user_id = -1) {
 		if ($user_id == -1) return "User ID is not set";
         
-        $fields = array ('user_name', 'email', 'first_name', 'middle_name', 'last_name', 
+        $fields = array ('id', 'user_name', 'email', 'first_name', 'middle_name', 'last_name', 
         'age', 'role', 'image');
         
         $user = $this->db->select('users', $fields, $user_id);

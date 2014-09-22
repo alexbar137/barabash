@@ -14,3 +14,11 @@ SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	12.09.2014 
 SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	12.09.2014 17:28:20
 SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	12.09.2014 17:29:23
 SQLSTATE[HY093]: Invalid parameter number: parameter was not defined	12.09.2014 17:30:08
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'to_name' cannot be null	22.09.2014 06:54:51
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'to_name' cannot be null	22.09.2014 06:55:34
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Выберите получателя' for column 'to_name' at row 1	22.09.2014 07:03:57
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Выберите получателя' for column 'to_name' at row 1	22.09.2014 07:04:19
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Выберите получателя' for column 'to_name' at row 1	22.09.2014 07:06:43
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Выберите получателя' for column 'to_name' at row 1	22.09.2014 07:09:50
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Выберите получателя' for column 'to_name' at row 1	22.09.2014 07:10:10
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Выберите получателя' for column 'to_name' at row 1	22.09.2014 07:10:53

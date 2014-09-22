@@ -18,7 +18,8 @@
 	</li>
 	<li><a href="%%URL%%/forum">Сообщения</a>
 		<ul>
-			<li><a href="%%URL%%/message/all">Личные</a></li>
+			<li><a href="%%URL%%/message/incoming">Входящие</a></li>
+            <li><a href="%%URL%%/message/outcoming">Исходящие</a></li>
 			<li><a href="#">Форум</a></li>
 		</ul>
 	</li>

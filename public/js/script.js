@@ -3,9 +3,11 @@ var SITE_URL = "http://miracle-number.codio.io:3000";
 $(document).ready(function() {
 	//Main menu
 	$('#header_items li').hover(function() {
+    	$(this).stop();
 		$(this).children('ul').slideToggle("fast");
 	})
 	$('#header_items li').mouseleave(function() {
+    	$(this).stop();
 		$(this).children('ul').slideUp("fast");
 	})
     
@@ -21,19 +23,127 @@ $(document).ready(function() {
     
     
     //Create reply textarea
-    $('.reply-link').click(function() {
-    	$(this).fadeOut("slow");
-        var message_id = $(this).parent('.msg').attr('message_id');
-        var form = '<form id="reply-form" name="reply-form" action="'+SITE_URL+'/message/add_reply/'+message_id+'" method="POST"></form>';
-        $(this).parent('.msg').append(form);
-    	$('#reply-form').append('<textarea class="reply-text" class="display: none" cols=60 rows=10></textarea>');
-        $('#reply-form').append('<input type="submit" name="send_reply" value="Отправить"/>');
-        $('#reply-form').append('<input type="button" name="cancel" value="Отмена"/>');
-        $('.reply-link').off();
-    })
+    $('.reply-link').click(function(){
+    	reply($(this));
+    });
     
+    
+    //Create edit textarea
+    $('.edit-link').click(function(){
+    	edit($(this));
+    });    
 })
 
+//Show edit text area
+function edit(input) {
+    input.hide();
+    var main_message = input.parent();
+    var message_content = main_message.find('.body-txt').text();
+    input.parent().append('<div id="edit"></div>');
+    $('#edit').append('<textarea name="edit-txt" id="edit-txt" class="edit-text" class="display: none" cols=60 rows=10></textarea>');
+    $('#edit-txt').val(message_content);
+    $('#edit').append('<input type="button" name="send_edit" id="send_edit" value="Отправить"/>');
+    $('#edit').append('<input type="button" name="cancel" id="edit_cancel" value="Отмена";"/>');
+    main_message.find('.body-txt').hide();
+    
+    $('#edit_cancel').on('click', function(event) {
+    	event.stopPropagation();
+        event.preventDefault();
+    	location.reload();
+	});
+    
+    $('#send_edit').on('click', function(event) {
+    	event.stopPropagation();
+        event.preventDefault();
+        var message = $(this).parents(':eq(1)');
+        var message_id = message.data('code');
+        var output = {
+        	message_id: message_id,
+            body: $('#edit-txt').val()
+        };
+        
+        send_edit(output);
+    });
+    
+    $('.edit-link').off('click');
+}
+
+//Send edit and reload page if send is successfull
+function send_edit(input) {
+	$.ajax({
+    	url: SITE_URL + "/message/edit",
+        async: true,
+        type: "POST",
+        data: 
+        {
+        	message_id: input.message_id, 
+            body: input.body,
+        },
+        success: function() {
+        	location.reload();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+		  alert(textStatus + " " + errorThrown);
+		}
+    });
+}
+
+
+//Show reply text area
+function reply(input) {
+    input.hide();
+    var message_id = input.parent('.msg').attr('message_id');
+    input.parent().append('<div id="reply"></div>');
+    $('#reply').append('<textarea name="reply-txt" id="reply-txt" class="reply-text" class="display: none" cols=60 rows=10></textarea>');
+    $('#reply').append('<input type="button" name="send_reply" id="send_reply" value="Отправить"/>');
+    $('#reply').append('<input type="button" name="cancel" id="reply_cancel" value="Отмена";"/>');
+    
+    $('#reply_cancel').on('click', function(event) {
+    	event.stopPropagation();
+        event.preventDefault();
+    	location.reload();
+	});
+    
+    $('#send_reply').on('click', function(event) {
+    	event.stopPropagation();
+        event.preventDefault();
+        var message = $(this).parents(':eq(1)');
+        var output = {
+        	message: message,
+        	in_reply_to: message.data('code'),
+            subject: message.find('.msg-subj').data('subj'),
+            receiver: message.find('.msg-sender').data('sender'),
+            body: $('#reply-txt').val()
+        };
+        
+        send_reply(output);
+    });
+    
+    $('.reply-link').off('click');
+}
+
+//Send reply and reload page if send is successfull
+function send_reply(input) {
+	$.ajax({
+    	url: SITE_URL + "/message/add_reply",
+        async: true,
+        type: "POST",
+        data: 
+        {
+        	subject: input.subject, 
+            body: input.body, 
+            receiver: input.receiver,
+            in_reply_to: input.in_reply_to,
+            nesting: input.nesting
+        },
+        success: function() {
+        	location.reload();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+		  alert(textStatus + " " + errorThrown);
+		}
+    });
+}
 
 //Check user name and password
 function check_login() {
@@ -66,7 +176,6 @@ function check_login() {
 function create_message(name, position, text) {
 		$("#" + name).remove();
 		$(position).
-			parent("td").
 				after("<div id='" + name + "' class='message'></div>");
 		$("#" + name).text(text);
 }
@@ -249,4 +358,16 @@ function validate_article() {
     }
     
     return check;
+}
+
+function validate_new_message() {
+	$receiver = $('#receiver').val();
+    console.log($receiver);
+    alert("Stop");
+	if(isNaN($('#receiver').val()))
+    	{
+    	create_message('no_receiver', '#receiver', "Выберите получателя");
+        return false;
+        }
+    return true;
 }
